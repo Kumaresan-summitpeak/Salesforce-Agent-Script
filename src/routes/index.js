@@ -5,6 +5,7 @@ import { createSalesFroceLead, updateSalesforceLead } from "../salesforce/leads/
 import { getOpportunityDetails, updateOpportunityStageByNameOrId, closeOpportunityByName } from "../salesforce/opportunity/opportunity.js";
 import { lookupAccount } from "../salesforce/accounts/account.js";
 import { getSalesforceReportByName } from "../salesforce/reports/report.js";
+import { createOutlookNotification } from "../salesforce/outlookMails/createNotification.js";
 
 // Leads router
 router.post("/create-lead", createSalesFroceLead)
@@ -21,6 +22,8 @@ router.get("/accounts", lookupAccount)
 
 // Reports router
 router.get("/reports", getSalesforceReportByName)
+
+router.post("/notifications", createOutlookNotification)
 
 
 export default router;
